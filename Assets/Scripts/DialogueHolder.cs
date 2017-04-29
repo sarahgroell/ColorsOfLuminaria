@@ -24,10 +24,8 @@ public class DialogueHolder : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Player")
         {
-            Debug.Log("LOL");
             if(Input.GetKeyUp(KeyCode.G))
             {
-                Debug.Log("Enter");
                 string texts = textFile.text;
                 dMan.ShowBox(texts, icon);
             }
