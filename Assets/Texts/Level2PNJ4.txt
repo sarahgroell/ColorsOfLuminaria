@@ -1,0 +1,4 @@
+﻿Hop hop hop
+Tu dois avoir 2 rubis bleu avant de continuer ! Un était caché ! Retourne en arrière le chercher.
+Si tu en as 2, tu peux alors continuer !
+Tu peux faire des sauts contre les parois ! C'est super méga génial !

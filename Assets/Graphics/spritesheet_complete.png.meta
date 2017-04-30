@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 44c254cfb724c04438287dc98ef80efb
-timeCreated: 1493561657
+timeCreated: 1493563997
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -19,6 +19,7 @@ TextureImporter:
     21300024: spritesheet_complete_12
     21300026: spritesheet_complete_13
     21300028: spritesheet_complete_14
+    21300030: spritesheet_complete_15
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -274,6 +275,19 @@ TextureImporter:
         y: 1134
         width: 116
         height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spritesheet_complete_15
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 498
+        width: 115
+        height: 156
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
