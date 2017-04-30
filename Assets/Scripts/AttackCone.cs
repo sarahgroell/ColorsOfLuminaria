@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttackCone : MonoBehaviour {
     public TurretAI turretAI;
-
+ 
     public bool isLeft = false;
 
 
