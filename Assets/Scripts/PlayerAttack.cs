@@ -10,11 +10,20 @@ public class PlayerAttack : MonoBehaviour {
 
     public Collider2D attackTrigger;
 
+    public float bulletSpeed = 100;
+    public float bulletTimer;
+    public float shootInterval;
+
+
+    public GameObject bullet;
+    public Transform shootPointLeft;
+    private Player player;
     private Animator anim;
 
     void Awake()
     {
         anim = gameObject.GetComponent<Animator>();
+        player = gameObject.GetComponent<Player>();
         attackTrigger.enabled = false;
     }
 
@@ -24,7 +33,8 @@ public class PlayerAttack : MonoBehaviour {
         {
             attacking = true;
             attackedTimer = attackCd;
-            attackTrigger.enabled = true;
+            //attackTrigger.enabled = true;
+            Attack();
         }
 
         if (attacking)
@@ -36,9 +46,28 @@ public class PlayerAttack : MonoBehaviour {
             else
             {
                 attacking = false;
-                attackTrigger.enabled = false;
+                //attackTrigger.enabled = false;
             }
         }
         anim.SetBool("Attacking", attacking);
+    }
+
+    public void Attack()
+    {
+        Vector2 direction;
+        if (player.facingRight)
+        {
+            direction = new Vector2(1, 0);
+        }
+        else
+        {
+            direction = new Vector2(-1, 0);
+        }
+        direction.Normalize();
+
+       GameObject bulletClone;
+       bulletClone = Instantiate(bullet, shootPointLeft.transform.position, shootPointLeft.transform.rotation);
+       bulletClone.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;               
+
     }
 }

@@ -13,10 +13,8 @@ public class AttackConeStupid : MonoBehaviour {
     void OnTriggerStay2D(Collider2D col)
     {
         if (col.CompareTag("Player"))
-        {
-           
-           turretStupid.Attack();
-            
+        {           
+           turretStupid.Attack();            
         }
     }
 }

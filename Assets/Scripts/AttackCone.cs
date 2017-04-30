@@ -25,7 +25,6 @@ public class AttackCone : MonoBehaviour {
             {
                 turretAI.Attack(true);
             }
-            //turretAI.Attack(!isLeft);
         }    
     }
 }
