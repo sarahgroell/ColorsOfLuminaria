@@ -46,8 +46,6 @@ public class Door : MonoBehaviour {
         {
             gm.doorText.text = "";
         }
-
-
     }
 
 

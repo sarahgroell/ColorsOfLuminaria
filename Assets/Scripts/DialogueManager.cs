@@ -10,18 +10,31 @@ public class DialogueManager : MonoBehaviour {
     private string[] listSentences;
     private int length;
     private int current;
+    private GameMaster gm;
 
     public bool dialogActive;
+    private bool paused;
 
 	// Use this for initialization
 	void Start () {
         dialogActive = false;
         dBox.SetActive(false);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if(dialogActive && Input.GetKeyDown(KeyCode.E))
+        gm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
+
+    }
+
+    // Update is called once per frame
+    void Update () {
+        if (paused)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+
+		if(dialogActive && Input.GetKeyDown(KeyCode.G))
         {
             //Il faut d'abord voir s'il reste du texte
             if(current < length - 1)
@@ -31,15 +44,17 @@ public class DialogueManager : MonoBehaviour {
             }else
             {
                 //Sinon on enlève la box.
+                paused = false;
                 dBox.SetActive(false);
                 dialogActive = false;
+                gm.doorText.text = "[G] to talk";
             }
         }
 	}
 
     public void ShowBox(string dialogue, Sprite icon)
     {
-        
+        paused = true;
         dialogActive = true;
         dBox.SetActive(true);
 

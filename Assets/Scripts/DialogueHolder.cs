@@ -10,13 +10,17 @@ public class DialogueHolder : MonoBehaviour {
     public TextAsset textFile;
     private DialogueManager dMan;
 
-	// Use this for initialization
-	void Start () {
+    private GameMaster gm;
+
+
+    // Use this for initialization
+    void Start () {
         dMan = FindObjectOfType<DialogueManager>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        gm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
@@ -24,12 +28,30 @@ public class DialogueHolder : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Player")
         {
-            if(Input.GetKeyUp(KeyCode.G))
+            if(Input.GetKeyUp(KeyCode.E))
             {
                 string texts = textFile.text;
+                gm.doorText.text = "";
                 dMan.ShowBox(texts, icon);
             }
         }
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Player"))
+        {
+            gm.doorText.text = "[E] to talk";
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.CompareTag("Player"))
+        {
+            gm.doorText.text = "";
+        }
+    }
+
 }
 

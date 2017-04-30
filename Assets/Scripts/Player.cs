@@ -103,11 +103,11 @@ public class Player : MonoBehaviour {
         {
             if (facingRight)
             {
-                rb2d.AddForce(new Vector2(-1.5f, 2) * jumpPower);
+                rb2d.AddForce(new Vector2(-1.5f, 1.2f) * jumpPower);
             }
             else
             {
-                rb2d.AddForce(new Vector2(1.5f, 2) * jumpPower);
+                rb2d.AddForce(new Vector2(1.5f, 1.2f) * jumpPower);
             }
         }
     }
