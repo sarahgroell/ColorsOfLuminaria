@@ -44,6 +44,7 @@ public class TurretStupid : MonoBehaviour, Ennemy {
         {
             isDead = true;
             anim.SetBool("isDead", isDead);
+            anim.Play("TurrentStupid_dead");
             Destroy(gameObject.GetComponentInChildren<BoxCollider2D>());
         }
     }
