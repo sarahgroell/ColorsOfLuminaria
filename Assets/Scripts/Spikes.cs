@@ -15,8 +15,8 @@ public class Spikes : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D col) {
         if (col.CompareTag("Player"))
         {
-            player.Damage(3);
-            StartCoroutine(player.KnockBack(0.02f,150,player.transform.position));
+            player.Damage(2);
+            StartCoroutine(player.KnockBack(0.02f,10,player.transform.position));
         }
 	}
 }
