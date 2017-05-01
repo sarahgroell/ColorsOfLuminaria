@@ -13,6 +13,11 @@ public class PlayerBullet : MonoBehaviour {
                 col.GetComponentInParent<TurretStupid>().Damage(10);
                 Destroy(gameObject);
             }
+           
+        }
+        if (col.tag == "Walls")
+        {
+            Destroy(gameObject);
         }
     }
 }
