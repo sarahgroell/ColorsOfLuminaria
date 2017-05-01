@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Player : MonoBehaviour {
 
+    public AudioClip coinSong;
     public float speed = 50f;
     public float jumpPower;
     public float maxSpeed = 3;
@@ -192,6 +194,9 @@ public class Player : MonoBehaviour {
     {
         if (col.CompareTag("Coin"))
         {
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.clip = coinSong;
+            audio.Play();
             Destroy(col.gameObject);
             gameMaster.points += 1;
         }

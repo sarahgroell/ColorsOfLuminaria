@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour {
 
+    public AudioClip attackSong;
     private bool attacking = false;
     private float attackedTimer = 0;
     private float attackCd = 0.3f;
@@ -32,6 +33,9 @@ public class PlayerAttack : MonoBehaviour {
         if(Input.GetKeyDown("f") && !attacking)
         {
             attacking = true;
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.clip = attackSong;
+            audio.Play();
             attackedTimer = attackCd;
             //attackTrigger.enabled = true;
             Attack();
