@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class DialogueHolder : MonoBehaviour {
 
     public string dialogue;
@@ -30,6 +31,8 @@ public class DialogueHolder : MonoBehaviour {
         {
             if(Input.GetKeyUp(KeyCode.E))
             {
+                AudioSource audio = GetComponent<AudioSource>();
+                audio.Play();
                 string texts = textFile.text;
                 gm.doorText.text = "";
                 dMan.ShowBox(texts, icon);
