@@ -35,7 +35,7 @@ public class PlayerAttack : MonoBehaviour {
             attacking = true;
             AudioSource audio = GetComponent<AudioSource>();
             audio.clip = attackSong;
-            audio.Play();
+            audio.Play();   
             attackedTimer = attackCd;
             //attackTrigger.enabled = true;
             Attack();
