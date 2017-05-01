@@ -53,7 +53,6 @@ public class TurretAI : MonoBehaviour, Ennemy {
         if(curHealth <= 0)
         {
             Destroy(gameObject);
-            gm.points += 10;
         }
     }
 

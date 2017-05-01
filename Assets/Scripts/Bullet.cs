@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
-    public float life = 2.0f;
-
 	void OnTriggerEnter2D(Collider2D col)
     {
         if(col.isTrigger != true)

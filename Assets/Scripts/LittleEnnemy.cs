@@ -14,13 +14,10 @@ public class LittleEnnemy : MonoBehaviour, Ennemy {
 
     public Animator anim;
 
-    private GameMaster gm;
-
 
     void Awake()
     {
         anim = gameObject.GetComponent<Animator>();
-        gm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
     }
 
     void Start()
@@ -44,7 +41,6 @@ public class LittleEnnemy : MonoBehaviour, Ennemy {
         anim.SetBool("isDead", isDead);
         Destroy(gameObject.GetComponentInChildren<AttackConeLittleEnnemy>());
         Destroy(collider);
-        gm.points += 10;
     }
 
     public void Attack()

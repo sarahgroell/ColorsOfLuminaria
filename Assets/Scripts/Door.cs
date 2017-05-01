@@ -21,11 +21,23 @@ public class Door : MonoBehaviour {
             gm.doorText.text = "[E] to enter";
             if (Input.GetKeyDown("e"))
             {
-                SaveScore();
-                Application.LoadLevel(levelToLoad);
+                HandelLevelAchieved();                
             }
         }
+    }
 
+    void HandelLevelAchieved()
+    {
+        if (gm.points >= gm.requiredPoints)
+        {
+            Application.LoadLevel(levelToLoad);
+        }
+        else
+        {
+            int missingRubis = gm.requiredPoints - gm.points;
+            gm.warningText.text = "Attention princesse ! Il te manque " + missingRubis + " rubis !";
+        }    
+           
     }
 
     void OnTriggerStay2D(Collider2D col)
@@ -35,8 +47,7 @@ public class Door : MonoBehaviour {
         {
             if (Input.GetKeyDown("e"))
             {
-                SaveScore();
-                Application.LoadLevel(levelToLoad);
+                HandelLevelAchieved(); 
             }
         }
     }
@@ -45,12 +56,8 @@ public class Door : MonoBehaviour {
         if (col.CompareTag("Player"))
         {
             gm.doorText.text = "";
+            gm.warningText.text = "";
         }
     }
 
-
-    void SaveScore()
-    {
-        PlayerPrefs.SetInt("score", gm.points);
-    }
 }

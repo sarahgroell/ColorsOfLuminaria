@@ -6,33 +6,24 @@ using UnityEngine.UI;
 public class GameMaster : MonoBehaviour {
 
     public int points;
-    public int highScore = 0;
+    public int requiredPoints;
     public Text pointsText;
     public Text doorText;
+    public Text warningText;
 
     void Start()
     {
         if (PlayerPrefs.HasKey("score"))
         {
-            if(Application.loadedLevel == 0)
-            {
-                PlayerPrefs.DeleteKey("score");
-                points = 0;
-            }
-            else
-            {
-                points = PlayerPrefs.GetInt("score");
-            }
-           
-        }
-        if (PlayerPrefs.HasKey("highscore"))
-        {
-            highScore = PlayerPrefs.GetInt("highscore");
+            PlayerPrefs.DeleteKey("score");
+            points = 0;                      
         }
     }
+
+
     void Update()
     {
-        pointsText.text  = ("Points : " + points);
+        pointsText.text  = ("Rubis : " + points);
     }
 
 }

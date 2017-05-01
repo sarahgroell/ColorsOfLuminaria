@@ -163,17 +163,6 @@ public class Player : MonoBehaviour {
     }
     public void Die()
     {
-        if (PlayerPrefs.HasKey("highscore"))
-        {
-            if(gameMaster.points > PlayerPrefs.GetInt("highscore"))
-            {
-                PlayerPrefs.SetInt("highscore", gameMaster.points);
-            }
-        }
-        else
-        {
-            PlayerPrefs.SetInt("highscore", gameMaster.points);
-        }
         Application.LoadLevel(Application.loadedLevel);
     }
 
@@ -201,5 +190,4 @@ public class Player : MonoBehaviour {
             gameMaster.points += 1;
         }
     }
-
 }
