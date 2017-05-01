@@ -10,7 +10,7 @@ public class PlayerBullet : MonoBehaviour {
         {
             if (col.CompareTag("Ennemy"))
             {
-                col.GetComponentInParent<TurretStupid>().Damage(10);
+                col.GetComponentInParent<Ennemy>().Damage(10);
                 Destroy(gameObject);
             }
            

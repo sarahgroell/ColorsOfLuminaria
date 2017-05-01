@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretStupid : MonoBehaviour {
+public class TurretStupid : MonoBehaviour, Ennemy {
 
     public int curHealth;
     public int maxHealth = 3;
