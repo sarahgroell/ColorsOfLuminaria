@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.ImageEffects;
 
 [RequireComponent(typeof(AudioSource))]
 public class Player : MonoBehaviour {
 
     public AudioClip coinSong;
+    public Camera camera;
     public float speed = 50f;
     public float jumpPower;
     public float maxSpeed = 3;
@@ -188,6 +190,12 @@ public class Player : MonoBehaviour {
             audio.Play();
             Destroy(col.gameObject);
             gameMaster.points += 1;
+            if(gameMaster.points == 2)
+            {
+                Grayscale g =  camera.GetComponentInChildren<Grayscale>();
+                if(g != null)
+                    g.enabled = false;
+            }
         }
     }
 }
