@@ -44,7 +44,7 @@ public class DialogueHolder : MonoBehaviour {
     {
         if (col.CompareTag("Player"))
         {
-            gm.doorText.text = "[E] to talk";
+            gm.doorText.text = "[E] pour parler";
         }
     }
 

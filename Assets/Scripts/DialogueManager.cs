@@ -47,7 +47,7 @@ public class DialogueManager : MonoBehaviour {
                 paused = false;
                 dBox.SetActive(false);
                 dialogActive = false;
-                gm.doorText.text = "[G] to talk";
+                gm.doorText.text = "[E] pour parler";
             }
         }
 	}

@@ -18,7 +18,7 @@ public class Door : MonoBehaviour {
     {
         if (col.CompareTag("Player"))
         {
-            gm.doorText.text = "[E] to enter";
+            gm.doorText.text = "[E] pour continuer";
             if (Input.GetKeyDown("e"))
             {
                 HandelLevelAchieved();                
